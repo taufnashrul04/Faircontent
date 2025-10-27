@@ -1,0 +1,291 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Add custom fonts for Fairblock */
+@font-face {
+  font-family: "EBGaramond";
+  src: url("/fonts/EBGaramond-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Marlide";
+  src: url("/fonts/MarlideDisplay_Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Updated neon effect classes with custom color palette */
+/* Updated primary color to cyan blue #58BDF6 */
+.neon-primary {
+  color: #58bdf6;
+  text-shadow: 0 0 8px #58bdf6, 0 0 16px #58bdf6, 0 0 32px #58bdf6, 0 0 64px #58bdf6, 0 0 96px #58bdf6;
+}
+
+/* Updated secondary color to blue purple #718BD2 */
+.neon-secondary {
+  color: #718bd2;
+  text-shadow: 0 0 8px #718bd2, 0 0 16px #718bd2, 0 0 32px #718bd2, 0 0 64px #718bd2, 0 0 96px #718bd2;
+}
+
+/* Updated accent color to lime green #D4FA62 */
+.neon-accent {
+  color: #d4fa62;
+  text-shadow: 0 0 8px #d4fa62, 0 0 16px #d4fa62, 0 0 32px #d4fa62, 0 0 64px #d4fa62, 0 0 96px #d4fa62;
+}
+
+.neon-tertiary {
+  color: #f6aaff;
+  text-shadow: 0 0 8px #f6aaff, 0 0 16px #f6aaff, 0 0 32px #f6aaff, 0 0 64px #f6aaff, 0 0 96px #f6aaff;
+}
+
+/* Neon background utility with enhanced glow */
+/* Updated background primary to cyan blue */
+.bg-neon-primary {
+  background: #58bdf6;
+  box-shadow: 0 0 16px 6px #58bdf6, 0 0 48px 12px #58bdf677, 0 0 80px 20px #58bdf655;
+}
+
+/* Updated background secondary to blue purple */
+.bg-neon-secondary {
+  background: #718bd2;
+  box-shadow: 0 0 16px 6px #718bd2, 0 0 48px 12px #718bd277, 0 0 80px 20px #718bd255;
+}
+
+/* Updated background accent to lime green */
+.bg-neon-accent {
+  background: #d4fa62;
+  box-shadow: 0 0 16px 6px #d4fa62, 0 0 48px 12px #d4fa6277, 0 0 80px 20px #d4fa6255;
+}
+
+.bg-neon-tertiary {
+  background: #f6aaff;
+  box-shadow: 0 0 16px 6px #f6aaff, 0 0 48px 12px #f6aaff77, 0 0 80px 20px #f6aaff55;
+}
+
+/* Neon border utility with enhanced glow */
+/* Updated border primary to cyan blue */
+.border-neon-primary {
+  border-color: #58bdf6;
+  box-shadow: 0 0 12px #58bdf6, 0 0 24px #58bdf677;
+}
+
+/* Updated border secondary to blue purple */
+.border-neon-secondary {
+  border-color: #718bd2;
+  box-shadow: 0 0 12px #718bd2, 0 0 24px #718bd277;
+}
+
+/* Updated border accent to lime green */
+.border-neon-accent {
+  border-color: #d4fa62;
+  box-shadow: 0 0 12px #d4fa62, 0 0 24px #d4fa6277;
+}
+
+.border-neon-tertiary {
+  border-color: #f6aaff;
+  box-shadow: 0 0 12px #f6aaff, 0 0 24px #f6aaff77;
+}
+
+/* Neon focus ring */
+/* Updated focus ring to cyan blue */
+.focus\:ring-neon-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #58bdf6, 0 0 24px 12px #58bdf677;
+}
+
+/* Added neon glow animation for faircard and fair tweet preview */
+@keyframes neon-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px #58bdf6, 0 0 20px #58bdf6, 0 0 30px #58bdf6, 0 0 40px #58bdf6;
+  }
+  50% {
+    box-shadow: 0 0 20px #58bdf6, 0 0 40px #58bdf6, 0 0 60px #58bdf6, 0 0 80px #58bdf6;
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-neon-glow {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Added click animation effect for preview cards */
+@keyframes click-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #58bdf6, 0 0 20px #58bdf6, 0 0 30px #58bdf6, 0 0 40px #58bdf6;
+  }
+  50% {
+    transform: scale(0.98);
+    box-shadow: 0 0 20px #58bdf6, 0 0 40px #58bdf6, 0 0 60px #58bdf6, 0 0 80px #58bdf6;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #58bdf6, 0 0 20px #58bdf6, 0 0 30px #58bdf6, 0 0 40px #58bdf6;
+  }
+}
+
+.animate-click-pulse {
+  animation: click-pulse 0.6s ease-out;
+}
+
+/* Added footer link styling with neon glow */
+.footer-link {
+  color: #58bdf6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px #58bdf6;
+}
+
+.footer-link:hover {
+  color: #d4fa62;
+  text-shadow: 0 0 12px #d4fa62, 0 0 24px #d4fa62;
+}
+
+.footer-separator {
+  color: #718bd2;
+  margin: 0 8px;
+  text-shadow: 0 0 8px #718bd2;
+}
+
+:root {
+  /* Updated primary colors to cyan blue and blue purple */
+  --background: #0a0e27;
+  --foreground: #58bdf6;
+  --card: #1a1f3a;
+  --card-foreground: #58bdf6;
+  --popover: #0a0e27;
+  --popover-foreground: #58bdf6;
+  --primary: #58bdf6;
+  --primary-foreground: #0a0e27;
+  --secondary: #718bd2;
+  --secondary-foreground: #0a0e27;
+  --muted: #2a2f4a;
+  --muted-foreground: #d4fa62;
+  --accent: #d4fa62;
+  --accent-foreground: #0a0e27;
+  --destructive: #ee7d4d;
+  --destructive-foreground: #0a0e27;
+  --border: #58bdf6;
+  --input: #1a1f3a;
+  --ring: #58bdf6;
+  --chart-1: #58bdf6;
+  --chart-2: #718bd2;
+  --chart-3: #d4fa62;
+  --chart-4: #f6aaff;
+  --chart-5: #ee7d4d;
+  --radius: 0.625rem;
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #58bdf6;
+  --sidebar-primary: #58bdf6;
+  --sidebar-primary-foreground: #0a0e27;
+  --sidebar-accent: #d4fa62;
+  --sidebar-accent-foreground: #0a0e27;
+  --sidebar-border: #58bdf6;
+  --sidebar-ring: #718bd2;
+}
+
+.dark {
+  /* Updated primary colors to cyan blue and blue purple */
+  --background: #0a0e27;
+  --foreground: #58bdf6;
+  --card: #1a1f3a;
+  --card-foreground: #58bdf6;
+  --popover: #0a0e27;
+  --popover-foreground: #58bdf6;
+  --primary: #58bdf6;
+  --primary-foreground: #0a0e27;
+  --secondary: #718bd2;
+  --secondary-foreground: #0a0e27;
+  --muted: #2a2f4a;
+  --muted-foreground: #d4fa62;
+  --accent: #d4fa62;
+  --accent-foreground: #0a0e27;
+  --destructive: #ee7d4d;
+  --destructive-foreground: #0a0e27;
+  --border: #58bdf6;
+  --input: #1a1f3a;
+  --ring: #58bdf6;
+  --chart-1: #58bdf6;
+  --chart-2: #718bd2;
+  --chart-3: #d4fa62;
+  --chart-4: #f6aaff;
+  --chart-5: #ee7d4d;
+  --sidebar: #1a1f3a;
+  --sidebar-foreground: #58bdf6;
+  --sidebar-primary: #58bdf6;
+  --sidebar-primary-foreground: #0a0e27;
+  --sidebar-accent: #d4fa62;
+  --sidebar-accent-foreground: #0a0e27;
+  --sidebar-border: #58bdf6;
+  --sidebar-ring: #718bd2;
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-ebgaramond: "EBGaramond", serif;
+  --font-marlide: "Marlide", serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
